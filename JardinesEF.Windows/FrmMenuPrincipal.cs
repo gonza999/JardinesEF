@@ -47,5 +47,16 @@ namespace JardinesEF.Windows
             FrmClientes frm = new FrmClientes(DI.Create<IClientesServicios>());
             frm.ShowDialog(this);
         }
+
+        private void ProveedoresButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ProductosButton_Click(object sender, EventArgs e)
+        {
+            FrmProductos frm = new FrmProductos(DI.Create<IProductosServicios>());
+            frm.ShowDialog(this);
+        }
     }
 }

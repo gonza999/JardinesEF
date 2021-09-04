@@ -30,6 +30,12 @@ namespace JardinesEF.Windows
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.DatosDataGridView = new System.Windows.Forms.DataGridView();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSuspendido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BotonesPanel = new System.Windows.Forms.Panel();
             this.CantidadDePaginasLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,18 +54,12 @@ namespace JardinesEF.Windows
             this.tsbImprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
-            this.DatosDataGridView = new System.Windows.Forms.DataGridView();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSuspendido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -85,6 +85,69 @@ namespace JardinesEF.Windows
             this.splitContainer1.Size = new System.Drawing.Size(868, 647);
             this.splitContainer1.SplitterDistance = 541;
             this.splitContainer1.TabIndex = 17;
+            // 
+            // DatosDataGridView
+            // 
+            this.DatosDataGridView.AllowUserToAddRows = false;
+            this.DatosDataGridView.AllowUserToDeleteRows = false;
+            this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProducto,
+            this.colCategoria,
+            this.colPrecio,
+            this.colStock,
+            this.colSuspendido});
+            this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.DatosDataGridView.MultiSelect = false;
+            this.DatosDataGridView.Name = "DatosDataGridView";
+            this.DatosDataGridView.ReadOnly = true;
+            this.DatosDataGridView.RowHeadersVisible = false;
+            this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DatosDataGridView.Size = new System.Drawing.Size(868, 541);
+            this.DatosDataGridView.TabIndex = 1;
+            // 
+            // colProducto
+            // 
+            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            this.colProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCategoria.HeaderText = "Categoría";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
+            this.colCategoria.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            this.colPrecio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colPrecio.Width = 43;
+            // 
+            // colStock
+            // 
+            this.colStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            this.colStock.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colStock.Width = 41;
+            // 
+            // colSuspendido
+            // 
+            this.colSuspendido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSuspendido.HeaderText = "Suspendido";
+            this.colSuspendido.Name = "colSuspendido";
+            this.colSuspendido.ReadOnly = true;
+            this.colSuspendido.Width = 69;
             // 
             // BotonesPanel
             // 
@@ -178,6 +241,7 @@ namespace JardinesEF.Windows
             this.tsbNuevo.Size = new System.Drawing.Size(46, 49);
             this.tsbNuevo.Text = "Nuevo";
             this.tsbNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
             // tsbBorrar
             // 
@@ -188,6 +252,7 @@ namespace JardinesEF.Windows
             this.tsbBorrar.Size = new System.Drawing.Size(43, 49);
             this.tsbBorrar.Text = "Borrar";
             this.tsbBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbBorrar.Click += new System.EventHandler(this.tsbBorrar_Click);
             // 
             // tsbEditar
             // 
@@ -198,6 +263,7 @@ namespace JardinesEF.Windows
             this.tsbEditar.Size = new System.Drawing.Size(41, 49);
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -213,6 +279,7 @@ namespace JardinesEF.Windows
             this.tsbBuscar.Size = new System.Drawing.Size(46, 49);
             this.tsbBuscar.Text = "Buscar";
             this.tsbBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbBuscar.Click += new System.EventHandler(this.tsbBuscar_Click);
             // 
             // tsbActualizar
             // 
@@ -253,69 +320,7 @@ namespace JardinesEF.Windows
             this.tsbCerrar.Size = new System.Drawing.Size(43, 49);
             this.tsbCerrar.Text = "Cerrar";
             this.tsbCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // DatosDataGridView
-            // 
-            this.DatosDataGridView.AllowUserToAddRows = false;
-            this.DatosDataGridView.AllowUserToDeleteRows = false;
-            this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colProducto,
-            this.colCategoria,
-            this.colPrecio,
-            this.colStock,
-            this.colSuspendido});
-            this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.DatosDataGridView.MultiSelect = false;
-            this.DatosDataGridView.Name = "DatosDataGridView";
-            this.DatosDataGridView.ReadOnly = true;
-            this.DatosDataGridView.RowHeadersVisible = false;
-            this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(868, 541);
-            this.DatosDataGridView.TabIndex = 1;
-            // 
-            // colProducto
-            // 
-            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            this.colProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCategoria.HeaderText = "Categoría";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            this.colCategoria.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            this.colPrecio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colPrecio.Width = 43;
-            // 
-            // colStock
-            // 
-            this.colStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
-            this.colStock.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colStock.Width = 41;
-            // 
-            // colSuspendido
-            // 
-            this.colSuspendido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSuspendido.HeaderText = "Suspendido";
-            this.colSuspendido.Name = "colSuspendido";
-            this.colSuspendido.ReadOnly = true;
-            this.colSuspendido.Width = 69;
+            this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
             // 
             // FrmProductos
             // 
@@ -326,14 +331,15 @@ namespace JardinesEF.Windows
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmProductos";
             this.Text = "FrmProductos";
+            this.Load += new System.EventHandler(this.FrmProductos_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

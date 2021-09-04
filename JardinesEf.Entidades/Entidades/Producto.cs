@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
 
 namespace JardinesEf.Entidades.Entidades
 {
-    public class Producto
+    public class Producto:ICloneable
     {
         public Producto()
         {
@@ -22,5 +23,10 @@ namespace JardinesEf.Entidades.Entidades
         public virtual Categoria Categoria { get; set; }
         public virtual ICollection<DetalleOrden> DetalleOrdenes { get; set; }
         public virtual Proveedor Proveedor { get; set; }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

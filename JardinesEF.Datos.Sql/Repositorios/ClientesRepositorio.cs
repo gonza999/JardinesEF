@@ -22,6 +22,8 @@ namespace JardinesEF.Datos.Sql.Repositorios
             try
             {
                 return _context.Clientes
+                    .Include(c=>c.Pais)
+                    .Include(c=>c.Ciudad)
                     .OrderBy(p => p.Apellido)
                     .Skip(cantidad * (pagina - 1))
                     .Take(cantidad)

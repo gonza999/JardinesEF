@@ -45,6 +45,7 @@
     <Compile Include="Facades\ICiudadesRepositorio.cs" />
     <Compile Include="Facades\IClientesRepositorio.cs" />
     <Compile Include="Facades\IPaisesRepositorio.cs" />
+    <Compile Include="Facades\IProductosRepositorio.cs" />
     <Compile Include="Facades\IRepositorio.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

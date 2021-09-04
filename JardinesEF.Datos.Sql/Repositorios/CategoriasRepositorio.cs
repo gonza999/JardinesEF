@@ -134,6 +134,22 @@ namespace JardinesEF.Datos.Sql.Repositorios
             }
         }
 
+        public List<Categoria> GetLista()
+        {
+            try
+            {
+                return _context.Categorias
+                    .OrderBy(p => p.NombreCategoria)
+                    .AsNoTracking()
+                    .ToList();
 
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception("Error al leer");
+
+            }
+        }
     }
 }

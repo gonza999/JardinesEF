@@ -65,6 +65,7 @@
     <Compile Include="Repositorios\CiudadesRepositorio.cs" />
     <Compile Include="Repositorios\ClientesRepositorio.cs" />
     <Compile Include="Repositorios\PaisesRepositorio.cs" />
+    <Compile Include="Repositorios\ProductosRepositorio.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="ViveroSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

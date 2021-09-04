@@ -7,9 +7,9 @@ using JardinesEf.Entidades.Entidades;
 
 namespace JardinesEF.Datos.Comun.Facades
 {
-    public interface ICategoriasRepositorio:IRepositorio<Categoria>
+    public interface ICategoriasRepositorio : IRepositorio<Categoria>
     {
         //List<IGrouping<int, Producto>> GetGrupos();
-
+        List<Categoria> GetLista();
     }
 }

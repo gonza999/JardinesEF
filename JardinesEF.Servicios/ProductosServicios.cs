@@ -1,31 +1,31 @@
-﻿using System;
+﻿using JardinesEf.Entidades.Entidades;
+using JardinesEF.Datos.Comun;
+using JardinesEF.Datos.Comun.Facades;
+using JardinesEF.Servicios.Facades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using JardinesEF.Datos.Comun;
-using JardinesEF.Datos.Comun.Facades;
-using JardinesEf.Entidades.Entidades;
-using JardinesEF.Servicios.Facades;
 
 namespace JardinesEF.Servicios
 {
-    public class CategoriasServicios:ICategoriasServicios
+    public class ProductosServicios:IProductosServicios
     {
-        private readonly ICategoriasRepositorio _repositorio;
+        private readonly IProductosRepositorio _repositorio;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CategoriasServicios(ICategoriasRepositorio repositorio, IUnitOfWork unitOfWork)
+        public ProductosServicios(IProductosRepositorio repositorio, IUnitOfWork unitOfWork)
         {
             _repositorio = repositorio;
             _unitOfWork = unitOfWork;
         }
 
-        public List<Categoria> GetLista(int registros, int pagina)
+        public List<Producto> GetLista(int registros, int pagina)
         {
             try
             {
-                return _repositorio.GetLista(registros,pagina);
+                return _repositorio.GetLista(registros, pagina);
             }
             catch (Exception e)
             {
@@ -35,7 +35,7 @@ namespace JardinesEF.Servicios
         }
 
 
-        public Categoria GetEntityPorId(int id)
+        public Producto GetEntityPorId(int id)
         {
             try
             {
@@ -47,11 +47,11 @@ namespace JardinesEF.Servicios
             }
         }
 
-        public void Guardar(Categoria pais)
+        public void Guardar(Producto producto)
         {
             try
             {
-                _repositorio.Guardar(pais);
+                _repositorio.Guardar(producto);
                 _unitOfWork.Save();
             }
             catch (Exception e)
@@ -60,11 +60,11 @@ namespace JardinesEF.Servicios
             }
         }
 
-        public bool Existe(Categoria categoria)
+        public bool Existe(Producto producto)
         {
             try
             {
-                return _repositorio.Existe(categoria);
+                return _repositorio.Existe(producto);
             }
             catch (Exception e)
             {
@@ -72,7 +72,7 @@ namespace JardinesEF.Servicios
             }
         }
 
-        public bool EstaRelacionado(Categoria categoria)
+        public bool EstaRelacionado(Producto producto)
         {
             throw new NotImplementedException();
         }
@@ -115,7 +115,7 @@ namespace JardinesEF.Servicios
 
         }
 
-        public List<Categoria> GetLista()
+        public List<Producto> GetLista()
         {
             try
             {

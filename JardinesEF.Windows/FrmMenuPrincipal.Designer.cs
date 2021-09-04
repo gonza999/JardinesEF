@@ -83,6 +83,7 @@ namespace JardinesEF.Windows
             this.ProductosButton.Text = "Productos";
             this.ProductosButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ProductosButton.UseVisualStyleBackColor = true;
+            this.ProductosButton.Click += new System.EventHandler(this.ProductosButton_Click);
             // 
             // ProveedoresButton
             // 
@@ -94,6 +95,7 @@ namespace JardinesEF.Windows
             this.ProveedoresButton.Text = "Proveedores";
             this.ProveedoresButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ProveedoresButton.UseVisualStyleBackColor = true;
+            this.ProveedoresButton.Click += new System.EventHandler(this.ProveedoresButton_Click);
             // 
             // ClientesButton
             // 

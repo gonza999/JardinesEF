@@ -45,5 +45,38 @@ namespace JardinesEF.Windows.Helpers
             ciudadesComboBox.ValueMember = "CiudadId";
             ciudadesComboBox.SelectedIndex = 0;
         }
+
+        internal static void CargarDatosComboCategorias(ref ComboBox categoriaComboBox)
+        {
+            ICategoriasServicios servicio = DI.Create<ICategoriasServicios>();
+            List<Categoria> lista = servicio.GetLista();
+            var defaultCategoria = new Categoria()
+            {
+                CategoriaId = 0,
+                NombreCategoria = "<Seleccione Categoria>"
+            };
+            lista.Insert(0, defaultCategoria);
+            categoriaComboBox.DataSource = lista;
+            categoriaComboBox.DisplayMember = "NombreCategoria";
+            categoriaComboBox.ValueMember = "CategoriaId";
+            categoriaComboBox.SelectedIndex = 0;
+        }
+
+        internal static void CargarDatosComboProveedores(ref ComboBox proveedoresComboBox)
+        {
+            //IProveedoresServicios servicio = DI.Create<IProveedoresServicios>();
+            //List<Proveedor> lista = servicio.GetLista();
+            List<Proveedor> lista = new List<Proveedor>();
+            var defaultProveedor = new Proveedor()
+            {
+                ProveedorId = 0,
+                NombreProveedor = "<Seleccione Proveedor>"
+            };
+            lista.Insert(0, defaultProveedor);
+            proveedoresComboBox.DataSource = lista;
+            proveedoresComboBox.DisplayMember = "NombreProveedor";
+            proveedoresComboBox.ValueMember = "ProveedorId";
+            proveedoresComboBox.SelectedIndex = 0;
+        }
     }
 }

@@ -54,6 +54,15 @@ namespace JardinesEF.Windows.Helpers
                 r.Cells[1].Value = ((Cliente)obj).Ciudad.NombreCiudad;
                 r.Cells[2].Value = ((Cliente)obj).Pais.NombrePais;
             }
+            if (obj is Producto)
+            {
+                r.Cells[0].Value = ((Producto)obj).NombreProducto;
+                r.Cells[1].Value = ((Producto)obj).Categoria.NombreCategoria;
+                r.Cells[2].Value = ((Producto)obj).PrecioUnitario;
+                r.Cells[3].Value = ((Producto)obj).UnidadesEnStock;
+                r.Cells[4].Value = ((Producto)obj).Suspendido;
+
+            }
 
             r.Tag = obj;
         }

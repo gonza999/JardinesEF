@@ -32,6 +32,8 @@ namespace JardinesEF.Windows.Ninject
             Bind<IClientesRepositorio>().To<ClientesRepositorio>();
             Bind<IClientesServicios>().To<ClientesServicios>();
 
+            Bind<IProductosRepositorio>().To<ProductosRepositorio>();
+            Bind<IProductosServicios>().To<ProductosServicios>();
         }
     }
 }

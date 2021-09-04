@@ -48,7 +48,9 @@
     <Compile Include="Facades\ICiudadesServicios.cs" />
     <Compile Include="Facades\IClientesServicios.cs" />
     <Compile Include="Facades\IPaisesServicios.cs" />
+    <Compile Include="Facades\IProductosServicios.cs" />
     <Compile Include="PaisesServicios.cs" />
+    <Compile Include="ProductosServicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
